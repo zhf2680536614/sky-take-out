@@ -9,7 +9,7 @@
          consignee, cancel_reason, rejection_reason, cancel_time, estimated_delivery_time, delivery_time, pack_amount,
          tableware_number)
         VALUES (#{number}, #{userId}, #{addressBookId}, #{orderTime}, #{checkoutTime}, #{amount}, #{remark}, #{phone},
-                #{address}, #{username}, #{consignee}, #{cancelReason}, #{rejectionReason}, #{cancelTime},
+                #{address}, #{userName}, #{consignee}, #{cancelReason}, #{rejectionReason}, #{cancelTime},
                 #{estimatedDeliveryTime}, #{deliveryTime}, #{packAmount}, #{tablewareNumber})
     </insert>
 </mapper>

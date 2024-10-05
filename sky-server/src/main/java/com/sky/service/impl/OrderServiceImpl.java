@@ -20,12 +20,13 @@ import com.sky.vo.OrderSubmitVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 @Service
-public class OrderServiceImpl implements OrderService {
+public class OrderServiceImpl implements OrderService{
     @Autowired
     private AddressBookMapper addressBookMapper;
     @Autowired
@@ -36,6 +37,7 @@ public class OrderServiceImpl implements OrderService {
     private OrderDetailMapper orderDetailMapper;
 
     @Override
+    @Transactional
     public OrderSubmitVO submitOrder(OrdersSubmitDTO ordersSubmitDTO) {
         //1.处理异常
         //判断用户的地址是否为空
@@ -72,6 +74,7 @@ public class OrderServiceImpl implements OrderService {
             orderDetailList.add(orderDetail);
         }
         orderDetailMapper.insertBatch(orderDetailList);
+
         //4.删除购物车数据
         shoppingCartMapper.delete(userId);
         //5.封装VO并且返回

@@ -22,7 +22,7 @@ public class OrderDetail implements Serializable {
     private Long id;
 
     //名称
-    private String name;
+    private String username;
 
     //订单id
     private Long orderId;
