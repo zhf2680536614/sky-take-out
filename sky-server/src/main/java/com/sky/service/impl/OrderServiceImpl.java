@@ -151,4 +151,16 @@ public class OrderServiceImpl implements OrderService{
         String json = JSONObject.toJSONString(map);
         webSocketServer.sendToAllClient(json);
     }
+
+    @Override
+    public void reminder(Long id) {
+        Orders orders = orderMapper.getById(id);
+
+        //通过webSocket提醒管理端来单
+        HashMap map = new HashMap();
+        map.put("type",2);
+        map.put("orderId",id);
+        map.put("content","订单号: "+orders.getNumber());
+        webSocketServer.sendToAllClient(JSONObject.toJSONString(map));
+    }
 }
