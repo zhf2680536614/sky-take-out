@@ -25,7 +25,7 @@ public class ReportController {
 
     /**
      * 营业额统计接口
-     * @param start
+     * @param begin
      * @param end
      * @return
      */
