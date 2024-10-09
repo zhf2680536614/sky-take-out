@@ -26,7 +26,7 @@ public class ReportServiceImpl implements ReportService {
         //创建集合存放范围日期
         List<LocalDate> dateList = new ArrayList<>();
         dateList.add(begin);
-        while (begin.equals(end)) {
+        while (!begin.equals(end)) {
             begin = begin.plusDays(1);
             dateList.add(begin);
         }
