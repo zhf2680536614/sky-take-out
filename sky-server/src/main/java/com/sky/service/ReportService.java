@@ -1,5 +1,6 @@
 package com.sky.service;
 
+import com.sky.vo.OrderReportVO;
 import com.sky.vo.TurnoverReportVO;
 import com.sky.vo.UserReportVO;
 
@@ -9,4 +10,6 @@ public interface ReportService {
     public TurnoverReportVO getTurnoverReport(LocalDate start,LocalDate end);
 
     UserReportVO getUserReport(LocalDate begin, LocalDate end);
+
+    OrderReportVO getOrdersReport(LocalDate begin, LocalDate end);
 }
