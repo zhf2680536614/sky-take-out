@@ -112,6 +112,7 @@ public class WorkspaceServiceImpl implements WorkspaceService {
 
         //全部订单
         map.put("status", null);
+
         Integer allOrders = orderMapper.countByMap(map);
 
         return OrderOverViewVO.builder()
